@@ -9,6 +9,7 @@ use App\Http\Controllers\backend\FormsController;
 use App\Http\Controllers\backend\PagesController;
 use App\Http\Controllers\backend\tableController;
 use App\Http\Controllers\backend\UIElementsController;
+use App\Http\Controllers\CustomersController;
 
 
 
@@ -28,7 +29,9 @@ Route::get('/table-data', [tableController::class, 'tableData'])->name('table-da
 Route::get('/tables-basic', [tableController::class, 'tableBasic'])->name('table-basic');
 
 Route::get('/blank-page', [PagesController::class, 'blankPage'])->name('blank-page');
-Route::get('/page-login', [PagesController::class, 'login'])->name('page-login');
+
+
+
 Route::get('/page-mailbox', [PagesController::class, 'mailbox'])->name('page-mailbox');
 Route::get('/page-user', [PagesController::class, 'user'])->name('page-user');
 Route::get('/page-error', [PagesController::class, 'error'])->name('page-error');
@@ -36,3 +39,12 @@ Route::get('/page-invoice', [PagesController::class, 'invoice'])->name('page-inv
 Route::get('/page-lockscreen', [PagesController::class, 'lockscreen'])->name('page-lockscreen');
 
 Route::get('/', [FirstpageController::class, 'index'])->name('firstpage');
+
+// Route::get('/customers',function(){
+//     $customers = Customers::all();
+//     echo "<pre>";
+//     print_r($customers->toArray());
+
+// });
+Route::get('/page-login', [CustomersController::class, 'login'])->name('page-login');
+Route::post('/customers', [CustomersController::class, 'store'])->name('customers.login');

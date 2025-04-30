@@ -19,7 +19,7 @@
             <button class="btn btn-primary btn-block" type="submit"><i class="bi bi-unlock me-2 fs-5"></i>UNLOCK </button>
           </div>
         </form>
-        <p><a href="{{route(page-login')}}">Not John ? Login Here.</a></p>
+        <p><a href="{{route('page-login')}}">Not John ? Login Here.</a></p>
       </div>
     </section>
     @endsection

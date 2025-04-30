@@ -12,10 +12,6 @@ class PagesController extends Controller
         return view('backend.Pages.blank-page');
     }
 
-    public function login()
-    {
-        return view('backend.Pages.page-login');
-    }
 
     public function mailbox()
     {

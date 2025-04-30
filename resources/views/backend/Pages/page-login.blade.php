@@ -7,16 +7,20 @@
       <div class="logo">
         <h1>Vali</h1>
       </div>
+
       <div class="login-box">
-        <form class="login-form" action="index.html">
+      <form class="login-form" method="POST" action="{{ route('customers.login') }}">
+        @csrf
+
+
           <h3 class="login-head"><i class="bi bi-person me-2"></i>SIGN IN</h3>
           <div class="mb-3">
             <label class="form-label">USERNAME</label>
-            <input class="form-control" type="text" placeholder="Email" autofocus>
+            <input class="form-control" type="text" name="username" placeholder="Email" required autofocus>
           </div>
           <div class="mb-3">
             <label class="form-label">PASSWORD</label>
-            <input class="form-control" type="password" placeholder="Password">
+            <input class="form-control" type="password" name="password" placeholder="Enter Password" required>
           </div>
           <div class="mb-3">
             <div class="utility">
