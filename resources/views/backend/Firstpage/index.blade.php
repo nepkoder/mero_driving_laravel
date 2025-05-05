@@ -63,7 +63,8 @@
       <div class="landing-hero-content">
         <h1 class="landing-hero-title">Vali Admin - A Free Bootstrap 5 Dashboard Template</h1>
         <p class="landing-hero-description">Built with PugJS, SASS, and Bootstrap 5</p>
-        <div><a class="btn btn-primary me-4" href="{{route('dashboard')}}">Demo</a><a class="btn btn-primary" href="https://github.com/pratikborsadiya/vali-admin" target="_blank" rel="noopener">GitHub</a></div><img class="landing-hero-banner" src="images/banner.jpg">
+        <div><a class="btn btn-primary me-4" href="{{route('page-login')}}">Demo</a>
+        <a class="btn btn-primary" href="https://github.com/pratikborsadiya/vali-admin" target="_blank" rel="noopener">GitHub</a></div><img class="landing-hero-banner" src="images/banner.jpg">
       </div>
     </section>
     <section class="features">

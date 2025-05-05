@@ -2,10 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-class Customers extends Model
+class Customers extends Authenticatable
 {
     protected $table = 'customers';
     protected $primaryKey = 'user_id';
+
+    protected $fillable = [
+        'email',
+        'password',
+    ];
 }

@@ -14,7 +14,7 @@ use App\Http\Controllers\CustomersController;
 
 
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
 
 Route::get('/docs', [DOCSController::class, 'index'])->name('docs');
 
@@ -47,4 +47,4 @@ Route::get('/', [FirstpageController::class, 'index'])->name('firstpage');
 
 // });
 Route::get('/page-login', [CustomersController::class, 'login'])->name('page-login');
-Route::post('/customers', [CustomersController::class, 'store'])->name('customers.login');
+Route::post('/customers', [CustomersController::class, 'store'])->name('customers.store');
