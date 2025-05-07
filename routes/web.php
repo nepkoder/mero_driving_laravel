@@ -12,6 +12,17 @@ use App\Http\Controllers\backend\UIElementsController;
 use App\Http\Controllers\CustomersController;
 
 
+use App\Http\Controllers\InstructorController;
+
+use App\Http\Controllers\UserController;
+
+use App\Http\Controllers\RateController;
+
+use App\Http\Controllers\VehicleController;
+
+
+
+
 
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
@@ -23,7 +34,7 @@ Route::get('/ui-cards', [UIElementsController::class, 'uiCards'])->name('ui-card
 Route::get('/widgets', [UIElementsController::class, 'widgets'])->name('widgets');
 
 Route::get('/form-components', [FormsController::class, 'formComponents'])->name('form-components');
-Route::get('/form-samples', [FormsController::class, 'fomrSamples'])->name('form-samples');
+Route::get('/form-samples', [FormsController::class, 'formSamples'])->name('form-samples');
 
 Route::get('/table-data', [tableController::class, 'tableData'])->name('table-data-table');
 Route::get('/tables-basic', [tableController::class, 'tableBasic'])->name('table-basic');
@@ -40,11 +51,23 @@ Route::get('/page-lockscreen', [PagesController::class, 'lockscreen'])->name('pa
 
 Route::get('/', [FirstpageController::class, 'index'])->name('firstpage');
 
-// Route::get('/customers',function(){
-//     $customers = Customers::all();
-//     echo "<pre>";
-//     print_r($customers->toArray());
-
-// });
 Route::get('/page-login', [CustomersController::class, 'login'])->name('page-login');
 Route::post('/customers', [CustomersController::class, 'store'])->name('customers.store');
+
+
+
+
+
+
+Route::get('/instructormanagement', [InstructorController::class, 'create'])->name('instructormanagement');
+Route::post('/instructormanagement', [InstructorController::class, 'store'])->name('instructors.store');
+
+Route::get('/usermanagement', [UserController::class, 'create'])->name('usermanagement');
+Route::post('/usermanagement', [UserController::class, 'store'])->name('user.store');
+
+
+Route::get('/ratemanagement', [RateController::class, 'create'])->name('ratemanagement');
+Route::post('/ratemanagement', [RateController::class, 'store'])->name('rate.store');
+
+Route::get('/vehiclemanagement', [VehicleController::class, 'create'])->name('vehiclemanagement');
+Route::post('/vehiclemanagement', [VehicleController::class, 'store'])->name('vehicles.store');

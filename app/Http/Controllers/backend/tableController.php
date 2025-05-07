@@ -9,11 +9,11 @@ class tableController extends Controller
 {
     public function tableData()
     {
-        return view('backend.Tables.table-data');
+        return view('backend.Tables.table-data-table');
     }
 
-    public function tablesBasic()
+    public function tableBasic()
     {
-        return view('backend.Tables.tables-basic');
+        return view('backend.Tables.table-basic');
     }
 }

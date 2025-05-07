@@ -84,5 +84,21 @@
                 <span class="app-menu__label">Docs</span>
             </a>
         </li>
+
+        {{-- Management --}}
+        <li class="treeview">
+            <a class="app-menu__item" href="#" data-bs-toggle="treeview">
+                <i class="app-menu__icon bi bi-file-earmark"></i>
+                <span class="app-menu__label">Management</span>
+                <i class="treeview-indicator bi bi-chevron-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                <li><a class="treeview-item" href="{{ route('usermanagement') }}"><i class="icon bi bi-circle-fill"></i> User Management</a></li>
+                <li><a class="treeview-item" href="{{ route('vehiclemanagement') }}"><i class="icon bi bi-circle-fill"></i> Vehicle Management</a></li>
+                <li><a class="treeview-item" href="{{ route('instructormanagement') }}"><i class="icon bi bi-circle-fill"></i> Instructor Management</a></li>
+                <li><a class="treeview-item" href="{{ route('ratemanagement') }}"><i class="icon bi bi-circle-fill"></i> Rate Managment</a></li>
+                
+            </ul>
+        </li>
     </ul>
 </aside>
