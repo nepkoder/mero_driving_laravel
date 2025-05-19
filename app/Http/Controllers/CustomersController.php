@@ -22,22 +22,21 @@ class CustomersController extends Controller
             'password' => 'required',
         ]);
 
-        // Attempt to log the user in
+        // Attempt to log the user in using the 'web' guard
         if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
-            // Redirect to the intended route (dashboard or the page the user tried to visit)
+            // Redirect to intended route (dashboard) with success message
             return redirect()->intended(route('dashboard'))->with('success', 'Login successful!');
         }
 
-        // Redirect back with an error message if authentication fails
+        // If login fails, redirect back with error message
         return back()->withErrors([
             'email' => 'These credentials do not match our records.',
         ]);
     }
 
-    // Show the dashboard page (this method is now simplified)
+    // Show dashboard page
     public function dashboardPage()
     {
         return view('dashboard');
     }
 }
-

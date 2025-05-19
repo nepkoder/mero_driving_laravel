@@ -51,7 +51,9 @@ Route::get('/page-lockscreen', [PagesController::class, 'lockscreen'])->name('pa
 
 Route::get('/', [FirstpageController::class, 'index'])->name('firstpage');
 
+
 Route::get('/page-login', [CustomersController::class, 'login'])->name('page-login');
+
 Route::post('/customers', [CustomersController::class, 'store'])->name('customers.store');
 
 
