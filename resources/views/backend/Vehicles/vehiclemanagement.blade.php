@@ -7,8 +7,8 @@
         <p>Enter vehicle details</p>
         <ul class="app-breadcrumb breadcrumb">
             <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-            <li class="breadcrumb-item">Management</li>
-            <li class="breadcrumb-item"><a href="{{ route('vehiclemanagement') }}">Vehicle Management</a></li>
+            <li class="breadcrumb-item">Vehicle management</li>
+            <li class="breadcrumb-item"><a href="{{ route('Vehiclelist') }}">Vehicle list</a></li>
         </ul>
     </div>
 </div>

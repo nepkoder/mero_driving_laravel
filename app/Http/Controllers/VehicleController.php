@@ -9,7 +9,7 @@ use App\Models\Vehicles;
 class VehicleController extends Controller
 {
     public function create(){
-        return view('backend.Management.vehiclemanagement');
+        return view('backend.Vehicles.vehiclemanagement');
         
 
     }
@@ -40,5 +40,10 @@ class VehicleController extends Controller
         return redirect()->route('vehiclemanagement')->with('success', 'Vehicle added successfully!');
 
 
+    }
+     public function records(){
+        $records=vehicles::all();
+
+    return view('backend.Vehicles.Vehiclelist',compact('records'));
     }
 }

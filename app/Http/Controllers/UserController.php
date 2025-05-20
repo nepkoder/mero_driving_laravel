@@ -1,47 +1,42 @@
 <?php
-
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\Customers;
 use Illuminate\Http\Request;
-use App\Models\Userdata;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function create()
+    // Show the login page
+    public function login()
     {
-        return view('backend.Management.usermanagement');
-        //
+        return view('backend.login.page-login');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    // Handle the login attemp t
     public function store(Request $request)
-
     {
-        $validated = $request->validate([
-            'full_name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users,email',
-            'dob' => 'required|date',
-            'role' => 'required|string',
-            'phone' => 'required|string|max:20',
-            'bio' => 'nullable|string',
-            'profile_photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        // Validate email and password
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
         ]);
-        // Handle Profile Photo upload if provided
-        $photoPath = null;
-        if ($request->hasFile('profile_photo')) {
-            $photoPath = $request->file('profile_photo')->store('profile_photos', 'public');
+
+        // Attempt to log the user in using the 'web' guard
+        if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
+            // Redirect to intended route (dashboard) with success message
+            return redirect()->intended(route('dashboard'))->with('success', 'Login successful!');
         }
 
-        
+        // If login fails, redirect back with error message
+        return back()->withErrors([
+            'email' => 'These credentials do not match our records.',
+        ]);
+    }
 
-        $validated['profile_photo'] = $photoPath;
-        Userdata::create($validated);
-
-        return redirect()->route('usermanagement')
-                         ->with('success', 'user added successfully!');
-        //
+    // Show dashboard page
+    public function dashboardPage()
+    {
+        return view('dashboard');
     }
 }

@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class Customers extends Authenticatable
+class Customer extends Authenticatable
 {
-    protected $table = 'customers';
+    protected $table = 'customer';
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'name',
+        'full_name',
+        'phone',
         'email',
-        'password',
-        'profile_image'
+        'address',
     ];
 }
 
