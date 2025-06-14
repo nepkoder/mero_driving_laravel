@@ -56,10 +56,8 @@
                             <div class="mb-3">
                                 <label class="form-label" for="userRole">Role</label>
                                 <select class="form-control" id="userRole" name="role">
-                                    <option value="admin">Frontend</option>
-                                    <option value="editor">Backend</option>
-                                    <option value="viewer">UI/UX</option>
-                                    <option value="user">Tester</option>
+                                    <option value="Trainer">Trainer</option>
+                                    <option value="User">User</option>
                                 </select>
                             </div>
 

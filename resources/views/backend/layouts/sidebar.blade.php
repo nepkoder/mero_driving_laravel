@@ -58,6 +58,18 @@
                 <li><a class="treeview-item" href="{{ route('Vehiclelist') }}"><i class="icon bi bi-circle-fill"></i>Vehicle List</a></li> 
             </ul>
         </li>
+        {{--Driving entry menu--}}
+        <li class="treeview">
+            <a class="app-menu__item" href="#" data-bs-toggle="treeview">
+                <i class="app-menu__icon bi bi-file-earmark"></i>
+                <span class="app-menu__label">Driving entry</span>
+                <i class="treeview-indicator bi bi-chevron-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                <li><a class="treeview-item" href="{{ route('EntryManagement') }}"><i class="icon bi bi-circle-fill"></i>Add New</a></li>      
+                <li><a class="treeview-item" href="{{ route('Entrylist') }}"><i class="icon bi bi-circle-fill"></i>Entry List</a></li> 
+            </ul>
+        </li>
 
         {{--Driving history--}}
         <li>

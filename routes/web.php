@@ -21,6 +21,7 @@ use App\Http\Controllers\RateController;
 use App\Http\Controllers\VehicleController;
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\DrivingEntryController;
 
 
 
@@ -82,3 +83,9 @@ Route::get('vehiclelist', [VehicleController::class, 'records'])->name('Vehiclel
 Route::get('/customermanagement', [CustomerController::class, 'create'])->name('customermanagement');
 Route::post('/customerpost', [CustomerController::class, 'store'])->name('customer.store');
 Route::get('/customerlist', [CustomerController::class, 'records'])->name('Customerlist');
+
+
+Route::get('/driving-entry', [DrivingEntryController::class, 'create'])->name('EntryManagement');
+
+Route::post('/driving-entry', [DrivingEntryController::class, 'store'])->name('driving-entry.store');
+Route::get('/driving-entry-list', [DrivingEntryController::class, 'records'])->name('Entrylist');
